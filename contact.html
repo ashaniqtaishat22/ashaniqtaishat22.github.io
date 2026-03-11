@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Your SID] - Contact Alaa</title> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="glass-nav">
+        <a href="index.html">Home</a>
+        <a href="contact.html" class="active">Contact Me</a>
+    </nav>
+
+    <div class="bento-layout" style="display: flex; justify-content: center;">
+        
+        <div class="bento-card" style="width: 100%; max-width: 600px;">
+          <h1 style="text-align: center; font-size: 2.2rem;">Get In Touch</h1>
+<p style="text-align: center; color: var(--neon-cyan); margin-bottom: 30px;">Reach out, and let's craft a seamless digital experience together.</p>
+            <form id="contactForm" onsubmit="validateForm(event)">
+                
+                <div class="input-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="Enter your full name">
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="e.g. name@domain.com">
+                </div>
+
+                <div class="input-group">
+                    <label for="country">Country</label>
+                    <select id="country">
+                        <option value="" disabled selected>Select your country</option>
+                        <option value="Jordan">Jordan</option>
+                        <option value="KSA">Saudi Arabia</option>
+                        <option value="UAE">United Arab Emirates</option>
+                        <option value="Palestine">Palestine</option>
+                        <option value="Other">Other Earth Region</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="comments">Comments</label>
+                    <textarea id="comments" rows="5" placeholder="Type your message here..."></textarea>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <button type="submit" class="btn-primary" style="cursor: pointer; width: 100%;">submit</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        function validateForm(event) {
+            
+            event.preventDefault();
+
+            let name = document.getElementById("fullName").value;
+            let email = document.getElementById("email").value;
+            let country = document.getElementById("country").value;
+            let comments = document.getElementById("comments").value;
+
+            if (name === "" || email === "" || country === "" || comments === "") {
+       
+                alert("Transmission Failed: Please fill in all fields to initiate contact.");
+            } else {
+               
+                alert("Form submitted successfully!");
+   
+                document.getElementById("contactForm").reset();
+            }
+        }
+    </script>
+</body>
+</html>

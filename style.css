@@ -1,0 +1,317 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;600;700&display=swap');
+
+:root {
+    --space-void: #05050a;
+    --starlight: #ffffff;
+    --neon-cyan: #00f3ff;
+    --neon-purple: #bc13fe;
+    --glass-panel: rgba(15, 15, 30, 0.6);
+}
+
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background-color: var(--space-void);
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(188, 19, 254, 0.15), transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(0, 243, 255, 0.15), transparent 40%);
+    color: var(--starlight);
+    margin: 0;
+    min-height: 100vh;
+    font-size: 1.1rem;
+}
+
+.glass-nav {
+    background: rgba(5, 5, 10, 0.8);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--neon-cyan);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+}
+
+.glass-nav a {
+    font-family: 'Orbitron', sans-serif;
+    text-decoration: none;
+    color: var(--starlight);
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.glass-nav a:hover, .glass-nav a.active {
+    border-color: var(--neon-cyan);
+    background: rgba(0, 243, 255, 0.1);
+    box-shadow: 0 0 15px var(--neon-cyan), inset 0 0 10px var(--neon-cyan);
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px var(--neon-cyan);
+}
+
+
+.bento-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+
+.bento-card {
+    background: var(--glass-panel);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 0 20px rgba(188, 19, 254, 0.1), inset 0 0 15px rgba(0, 243, 255, 0.05);
+    transition: 0.4s;
+  
+    animation: float 6s ease-in-out infinite;
+}
+
+
+.profile-card { grid-column: span 2; display: flex; justify-content: space-between; align-items: center; animation-delay: 0s; }
+.skills-card { grid-column: span 1; animation-delay: 1s; }
+.tools-card { grid-column: span 1; animation-delay: 0.5s; }
+.goals-card { grid-column: span 2; animation-delay: 1.5s; }
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+.bento-card:hover {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 25px rgba(0, 243, 255, 0.2), inset 0 0 15px rgba(188, 19, 254, 0.1);
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    margin: 0 0 15px 0;
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 20px var(--neon-cyan);
+}
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--neon-purple);
+    margin: 0 0 20px 0;
+    text-shadow: 0 0 10px rgba(188, 19, 254, 0.5);
+    border-bottom: 1px solid var(--neon-purple);
+    padding-bottom: 10px;
+}
+
+.badge {
+    display: inline-block;
+    background: transparent;
+    color: var(--neon-cyan);
+    padding: 5px 15px;
+    border: 1px solid var(--neon-cyan);
+    border-radius: 4px;
+    font-family: 'Orbitron', sans-serif;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+    margin-bottom: 15px;
+}
+
+
+.profile-img-wrapper img {
+    border-radius: 50%;
+    border: 2px solid var(--neon-cyan);
+    box-shadow: 0 0 15px var(--neon-cyan);
+    animation: pulse 3s infinite;
+    object-fit: cover;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 15px var(--neon-cyan); border-color: var(--neon-cyan); }
+    50% { box-shadow: 0 0 25px var(--neon-purple); border-color: var(--neon-purple); }
+    100% { box-shadow: 0 0 15px var(--neon-cyan); border-color: var(--neon-cyan); }
+}
+
+
+.chip-container { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;}
+.chip {
+    background: transparent;
+    color: var(--starlight);
+    padding: 8px 15px;
+    border: 1px solid var(--neon-purple);
+    border-radius: 4px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.3s;
+    
+}
+.chip:hover {
+    background: rgba(188, 19, 254, 0.2);
+    box-shadow: 0 0 15px var(--neon-purple);
+    text-shadow: 0 0 5px #fff;
+    transform: scale(1.05);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--neon-purple);
+    color: var(--starlight);
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+.social-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    transition: 0.3s;
+}
+
+.social-btn:hover {
+    background: rgba(188, 19, 254, 0.2);
+    color: var(--neon-cyan);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px var(--neon-cyan), inset 0 0 10px var(--neon-purple);
+    transform: translateY(-6px) scale(1.1);
+}
+
+
+.tech-grid { 
+    width: 100%; 
+    border-collapse: separate; 
+    border-spacing: 15px; 
+    background: transparent; 
+    border: none; 
+}
+
+.tech-grid td { 
+    padding: 0; 
+    border: none; 
+    width: 50%; 
+}
+
+
+.tech-btn {
+    display: block;
+    background: rgba(0, 0, 0, 0.4);
+    color: var(--starlight);
+    border: 1px solid var(--neon-purple);
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    letter-spacing: 1px;
+}
+
+.tech-btn:hover {
+    background: rgba(188, 19, 254, 0.2);
+    color: var(--neon-cyan);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px var(--neon-cyan), inset 0 0 10px rgba(0, 243, 255, 0.1);
+    transform: translateY(-4px);
+    text-shadow: 0 0 8px var(--neon-cyan);
+}
+th { background: rgba(188, 19, 254, 0.2); color: var(--neon-cyan); padding: 12px; text-align: left; font-family: 'Orbitron', sans-serif; border-bottom: 1px solid var(--neon-purple); }
+td { padding: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+td a { color: var(--starlight); text-decoration: none; transition: 0.3s; }
+td a:hover { color: var(--neon-cyan); text-shadow: 0 0 8px var(--neon-cyan); }
+
+.floating-footer { text-align: center; margin-top: 30px; padding-bottom: 50px; }
+.btn-primary {
+    display: inline-block;
+    background: transparent;
+    color: var(--neon-cyan);
+    padding: 15px 40px;
+    border: 2px solid var(--neon-cyan);
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    box-shadow: inset 0 0 10px rgba(0, 243, 255, 0.2), 0 0 10px rgba(0, 243, 255, 0.2);
+}
+.btn-primary:hover {
+    background: var(--neon-cyan);
+    color: var(--space-void);
+    box-shadow: 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan);
+}
+
+
+@media (max-width: 900px) {
+    .bento-layout { grid-template-columns: 1fr; }
+    .profile-card, .skills-card, .tools-card, .goals-card { grid-column: span 1; }
+    .profile-card { flex-direction: column-reverse; text-align: center; gap: 20px; }
+}
+
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--starlight);
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--neon-purple);
+    color: var(--neon-cyan);
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+
+.input-group input::placeholder, 
+.input-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+
+.input-group input:focus, 
+.input-group select:focus, 
+.input-group textarea:focus {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.2), inset 0 0 10px rgba(0, 243, 255, 0.1);
+    background: rgba(0, 243, 255, 0.05);
+}
+
+
+.input-group select option {
+    background-color: var(--space-void);
+    color: var(--starlight);
+}
